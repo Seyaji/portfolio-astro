@@ -3,7 +3,7 @@
 ---
 
 <div class='menu-button'>
-  <div class='menu-bar'></div>
+  <div class:list={["menu-bar", "bar-1"]}></div>
   <div class='menu-bar'></div>
   <div class='menu-bar'></div>
 </div>
@@ -17,10 +17,38 @@
     margin: 0.5rem;
   }
 
+  .menu-bar .bar-1 {
+    animation: bar-width 10s linear infinite;
+  }
+  .bar-2 {
+    animation: bar-width 10s linear infinite;
+  }
+  .bar-3 {
+    animation: bar-width 10s linear infinite;
+  }
+
   .menu-bar {
     width: 110%;
     height: 12px;
     margin: 0.7rem;
-    background-color: coral;
+    background-color: darkorange;
+  }
+  .menu-button:hover {
+    width: 70px;
+  }
+
+  @keyframes bar-width {
+    0% {
+      width: 110%;
+    }
+    3% {
+      width: 120%px;
+    }
+    7% {
+      width: 110%;
+    }
+    100% {
+      width: 110%;
+    }
   }
 </style>

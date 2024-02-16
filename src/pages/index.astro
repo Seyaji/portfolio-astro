@@ -1,16 +1,104 @@
 ---
-
+import Layout from "../layouts/layout.astro";
+import Skill from "../components/skill.astro";
+import SkillBox from "../components/SkillBox.astro";
+import SkillReel from "../components/SkillReel.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title='Alex Golding'>
+  <div class='title-card'>
+    <h1>ALEX</h1>
+    <h1>GOLDING</h1>
+    <h2>SOFTWARE DEVELOPER</h2>
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class='content'>
+    <SkillReel />
+    <br />
+    <br />
+  </div>
+  <!-- <SkillBox title='Additional Technologies'>
+    <Skill width='95%' delay='1.5s' name='BUN' icon='' />
+    <Skill width='80%' delay='2s' name='HTMX' icon='' />
+    <Skill width='90%' delay='2.5s' name='ASTRO' icon='' />
+    <Skill width='90%' delay='3s' name='WAILS' icon='' />
+  </SkillBox> -->
+</Layout>
+
+<style>
+  h1 {
+    margin: 0;
+    margin-top: -1rem;
+    margin-bottom: -3rem;
+    padding: 0;
+    font-size: 6rem;
+    color: goldenrod;
+  }
+
+  h2 {
+    margin: 0;
+    margin-left: 5px;
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: hotpink;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    padding-top: 0rem;
+    align-items: left;
+  }
+
+  .box-walk {
+    position: fixed;
+    top: 0;
+    width: 30px;
+    height: 4000px;
+    background-color: gray;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(15px);
+    opacity: 0.1;
+    animation: walk 2s linear;
+    z-index: 5;
+  }
+
+  @keyframes walk {
+    0% {
+      opacity: 0%;
+    }
+    10% {
+      opacity: 100%;
+    }
+    20% {
+      opacity: 0%;
+    }
+    40% {
+      opacity: 0%;
+    }
+    90% {
+      opacity: 0%;
+    }
+    91% {
+      opacity: 0%;
+    }
+    92% {
+      opacity: 0%;
+    }
+    100 {
+      opacity: 0%;
+    }
+  }
+</style>

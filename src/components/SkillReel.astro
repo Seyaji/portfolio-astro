@@ -1,0 +1,25 @@
+---
+import SkillBox from "./SkillBox.astro";
+import Skill from "./Skill.astro";
+import Next from "./Next.astro";
+---
+
+<div class='skill-reel'>
+  <Next next='false' />
+  <SkillBox title='Primrary Tech Stack'>
+    <Skill width='95%' delay='3' name='JavaScript / TypeScript' icon='' />
+    <Skill width='80%' delay='2' name='React / Next.js' icon='' />
+    <Skill width='90%' delay='1' name='Node.js' icon='' />
+  </SkillBox>
+  <Next next='true' hx-get='' />
+</div>
+<style>
+  .skill-reel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+</style>

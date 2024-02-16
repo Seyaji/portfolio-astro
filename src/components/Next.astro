@@ -1,0 +1,47 @@
+---
+const { next } = Astro.props;
+const angle = next === "true" ? "rotate(90deg)" : "rotate(-90deg)";
+---
+
+<div class='next-previous'>
+  <svg width='100' height='86.6' viewBox='0 0 100 86.6' xmlns='http://www.w3.org/2000/svg'>
+    <path d='M50 0 L100 86.6 H0 Z'></path>
+  </svg>
+  {next ? "" : ""}
+</div>
+<style define:vars={{ angle }}>
+  .next-previous {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: var(--angle);
+    fill: darkorange;
+  }
+  svg {
+    height: 30px;
+    width: 30px;
+    animation: attention 1s infinite alternate;
+    transition: all 0.3s ease-in-out;
+  }
+
+  svg:hover {
+    width: 60px;
+    height: 60px;
+    fill: orange;
+    cursor: pointer;
+  }
+
+  @keyframes attention {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>

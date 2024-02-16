@@ -4,37 +4,53 @@ const { title } = Astro.props;
 
 <div class='skill-box'>
   <div class='skill-title'>{title}</div>
+  <div class='next-skill'></div>
+  <div class='skill-description'>
+    <p>My core skills and experience are built around developing web-apps.</p>
+  </div>
   <slot />
 </div>
 <style>
+  p {
+    color: burlywood;
+  }
   .skill-title {
     position: relative;
-    top: -40px;
+    top: -42px;
     left: 30px;
     width: fit-content;
-    height: 40px;
+    height: 30px;
     margin-bottom: -30px;
-    margin-right: 10px;
     font-size: 2rem;
-    color: white;
-    background-color: #13151a;
+    color: darkorange;
     text-align: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
-  .skill-title .right {
+  .skill-description {
+    margin-left: 2rem;
+    margin-right: 1rem;
+    color: white;
+    font-family: "Roboto", sans-serif;
   }
 
   .skill-box {
-    width: 100%;
+    width: 85%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
-    border: 2px solid #eaeaea;
+    border: 2px solid slateblue;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius: 15px;
     padding-top: 1rem;
     padding-bottom: 2rem;
-    margin-left: -1rem;
+    /* box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.232); */
+    background-color: #272b3586;
+  }
+
+  .skill-box:hover {
+    box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.432);
+    transition: all 0.3s ease-in-out;
   }
 
   .skill-box .right {

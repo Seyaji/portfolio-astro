@@ -1,5 +1,8 @@
 ---
 const { name, width, icon, delay } = Astro.props;
+
+const animations = ["fill", "fill-early-acceleration", "fill-late-acceleration", "fill-ease-in-out"];
+const animation = animations[delay];
 ---
 
 <div class='skill'>
@@ -20,7 +23,7 @@ const { name, width, icon, delay } = Astro.props;
   </div>
 </div>
 
-<style define:vars={{ width, delay }}>
+<style define:vars={{ width, delay, animation }}>
   .skill {
     display: flex;
     flex-direction: column;
@@ -34,7 +37,10 @@ const { name, width, icon, delay } = Astro.props;
   }
 
   .text-box {
-    margin: 2rem;
+    margin: 1rem;
+    margin-left: 4rem;
+    font-family: "Roboto", sans-serif;
+    color: burlywood;
   }
 
   .skill-header {
@@ -49,8 +55,12 @@ const { name, width, icon, delay } = Astro.props;
   }
 
   .skill-name {
-    font-size: 1.5rem;
-    color: lightcoral;
+    color: darkorange;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1rem;
+    padding: 0.3rem;
+    padding-left: 0;
+    margin-left: 1rem;
   }
 
   .skill-bar {
@@ -70,23 +80,11 @@ const { name, width, icon, delay } = Astro.props;
     height: auto;
   }
 
-  /* .skill-bar:hover,
-  .skill-bar:focus,
-  .skill-bar:active {
-    height: 200px;
-    transition: height 0.5s;
-  }
-  .skill-bar::after {
-    height: 10px;
-    transition: height 0.5s;
-  } */
-
   .skill-fill {
-    height: 10px;
-    background-color: coral;
-    animation: fill 1s linear;
+    height: 12px;
+    background-color: slateblue;
+    animation: var(--animation) 1.3s linear;
     width: var(--width);
-    animation-delay: var(--delay);
   }
 
   @keyframes fillColor {
@@ -101,6 +99,41 @@ const { name, width, icon, delay } = Astro.props;
   @keyframes fill {
     0% {
       width: 0%;
+    }
+    100% {
+      width: var(--width);
+    }
+  }
+
+  @keyframes fill-early-acceleration {
+    0% {
+      width: 0%;
+    }
+    25% {
+      width: 60%;
+    }
+    100% {
+      width: var(--width);
+    }
+  }
+
+  @keyframes fill-late-acceleration {
+    0% {
+      width: 0%;
+    }
+    75% {
+      width: 40%;
+    }
+    100% {
+      width: var(--width);
+    }
+  }
+  @keyframes fill-ease-in-out {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 80%;
     }
     100% {
       width: var(--width);
