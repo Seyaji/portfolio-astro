@@ -1,0 +1,109 @@
+---
+const { name, width, icon, delay } = Astro.props;
+---
+
+<div class='skill'>
+  <div class='skill-header'>
+    <div class='skill-icon'>{icon}</div>
+    <div class='skill-name'>{name}</div>
+  </div>
+  <div class='skill-box'>
+    <div class='skill-bar'>
+      <div class='skill-fill'></div>
+      <div class='text-box'>
+        <p>
+          This is some content that will be updated at some point soon in the future. But for now here is just thje
+          place holder.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ width, delay }}>
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 45px;
+    overflow: hidden;
+  }
+
+  .skill:hover {
+    max-height: 200px;
+  }
+
+  .text-box {
+    margin: 2rem;
+  }
+
+  .skill-header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .skill-icon {
+    margin-right: 1rem;
+  }
+
+  .skill-name {
+    font-size: 1.5rem;
+    color: lightcoral;
+  }
+
+  .skill-bar {
+    width: 100%;
+    margin-left: -2rem;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    color: lightgrey;
+  }
+
+  .skill-box {
+    height: auto;
+  }
+
+  .skill-box:hover {
+    height: auto;
+  }
+
+  /* .skill-bar:hover,
+  .skill-bar:focus,
+  .skill-bar:active {
+    height: 200px;
+    transition: height 0.5s;
+  }
+  .skill-bar::after {
+    height: 10px;
+    transition: height 0.5s;
+  } */
+
+  .skill-fill {
+    height: 10px;
+    background-color: coral;
+    animation: fill 1s linear;
+    width: var(--width);
+    animation-delay: var(--delay);
+  }
+
+  @keyframes fillColor {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  @keyframes fill {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: var(--width);
+    }
+  }
+</style>
