@@ -9,7 +9,7 @@ const { title, id, description, skills, active } = Astro.props;
   <div class='skill-description'>
     <p>{description}</p>
   </div>
-  {(skills ?? []).map((skill) => <Skill {...skill} />)}
+  {(skills ?? []).map((skill: any) => <Skill {...skill} />)}
   <slot />
 </div>
 <style>
