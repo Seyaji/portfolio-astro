@@ -1,19 +1,30 @@
 ---
-const { title } = Astro.props;
+import Skill from "./skill.astro";
+const { title, id, description, skills, active } = Astro.props;
 ---
 
-<div class='skill-box'>
+<div id={id} class:list={["skill-box", { active: active }, { inactive: !active }]}>
   <div class='skill-title'>{title}</div>
   <div class='next-skill'></div>
   <div class='skill-description'>
-    <p>My core skills and experience are built around developing web-apps.</p>
+    <p>{description}</p>
   </div>
+  {(skills ?? []).map((skill) => <Skill {...skill} />)}
   <slot />
 </div>
 <style>
   p {
     color: burlywood;
   }
+
+  .active {
+    display: flex;
+  }
+
+  .inactive {
+    display: none;
+  }
+
   .skill-title {
     position: relative;
     top: -42px;
@@ -36,7 +47,6 @@ const { title } = Astro.props;
   .skill-box {
     width: 85%;
     max-width: 800px;
-    display: flex;
     flex-direction: column;
     border: 2px solid slateblue;
     border-right: 0px;
