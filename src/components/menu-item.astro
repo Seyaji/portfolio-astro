@@ -1,0 +1,60 @@
+---
+const { title, link } = Astro.props;
+---
+
+<div class='menu-item'>
+  <svg width='100' height='86.6' viewBox='0 0 100 86.6' xmlns='http://www.w3.org/2000/svg'>
+    <path d='M50 0 L100 86.6 H0 Z'></path>
+  </svg>
+  <a href={link}>{title}</a>
+  <svg width='100' height='86.6' viewBox='0 0 100 86.6' xmlns='http://www.w3.org/2000/svg'>
+    <path d='M50 0 L100 86.6 H0 Z'></path>
+  </svg>
+</div>
+<style>
+  a {
+    font-size: 3rem;
+    margin: 0.5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    cursor: pointer;
+    color: black;
+  }
+  a:hover {
+    color: firebrick;
+    transform: scale(1.2);
+    transition: 0.1s ease-in-out;
+  }
+
+  svg {
+    display: none;
+    width: 10px;
+  }
+  .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0.5rem;
+  }
+
+  .menu-item:hover {
+    display: flex;
+    svg {
+      display: block;
+      color: firebrick;
+      transform: scale(1.2);
+      animation: rotateInPlace 1s linear infinite;
+      transition: 0.5s ease-in-out;
+    }
+  }
+
+  @keyframes rotateInPlace {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>

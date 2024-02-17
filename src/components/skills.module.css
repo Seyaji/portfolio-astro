@@ -1,0 +1,261 @@
+/* Skill Reel */
+.skillReel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 0.2s linear;
+}
+
+/* Skill Box */
+.skillCard {
+  width: 85%;
+  max-width: 800px;
+  flex-direction: column;
+  border: 2px solid slateblue;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-radius: 15px;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background-color: #272b3586;
+}
+
+.skillCard:hover {
+  box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.432);
+  transition: all 0.3s ease-in-out;
+}
+.skillBox {
+  width: 90%;
+  max-width: 800px;
+  flex-direction: column;
+  border-right: 0px;
+  border-bottom: 0px;
+  margin-left: 0;
+  padding-bottom: 2rem;
+}
+
+.skillBox:hover {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Skill Title */
+.skillTitle {
+  position: relative;
+  top: -42px;
+  left: 30px;
+  width: fit-content;
+  height: 30px;
+  margin-bottom: -30px;
+  font-size: 2rem;
+  color: darkorange;
+  text-align: center;
+}
+
+/* Skill Description */
+.skillDescription {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Skill */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 45px;
+  overflow: hidden;
+}
+
+.skill:hover,
+.skill:active,
+.skill:focus {
+  max-height: fit-content;
+}
+
+/* Skill Header */
+.skillHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.skillIcon {
+  margin-right: 1rem;
+}
+
+.skillName {
+  color: darkorange;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  padding-left: 0;
+  margin-left: 1rem;
+}
+
+/* Skill Bar */
+.skillBar {
+  width: 100%;
+  margin-left: 0rem;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  color: lightgrey;
+  border-bottom-right-radius: 15px;
+}
+
+/* Text Box */
+.textBox {
+  margin: 1rem;
+  margin-left: 2rem;
+  font-family: "Roboto", sans-serif;
+  height: fit-content;
+  color: burlywood;
+}
+
+/* Skill Fill */
+.skillFill {
+  height: 12px;
+  background-color: slateblue;
+}
+
+/* Paragraph styles are global and should not need renaming */
+p {
+  color: burlywood;
+}
+
+/* Active and Inactive classes */
+.active {
+  display: flex;
+}
+
+.inactive {
+  display: none;
+}
+
+/* Next and Previous Buttons */
+.nextPrevious {
+  margin-top: 7rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: darkorange;
+}
+
+.fade {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+.forwardAngle {
+  transform: rotate(90deg);
+}
+
+.backwardAngle {
+  transform: rotate(-90deg);
+}
+
+/* SVG inside Next and Previous Buttons */
+.nextPrevious svg {
+  height: 30px;
+  width: 30px;
+  animation: attention 1s infinite alternate;
+  transition: all 0.3s ease-in-out;
+}
+
+.nextPrevious svg:hover {
+  width: 60px;
+  height: 60px;
+  fill: orange;
+  cursor: pointer;
+}
+
+.fill {
+  animation: fill 1s linear;
+}
+
+.fillEarlyAcceleration {
+  animation: fill-early-acceleration 2s linear;
+}
+
+.fillLateAcceleration {
+  animation: fill-late-acceleration 2s linear;
+}
+
+.fillEaseInOut {
+  animation: fill-ease-in-out 2s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Keyframes for SVG Animation */
+@keyframes attention {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes fill-early-acceleration {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 60%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes fill-late-acceleration {
+  0% {
+    width: 0%;
+  }
+  75% {
+    width: 40%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes fill-ease-in-out {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 80%;
+  }
+  100% {
+    width: 80%;
+  }
+}
