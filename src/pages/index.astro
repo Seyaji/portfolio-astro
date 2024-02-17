@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Skill from "../components/skill.astro";
-import SkillBox from "../components/SkillBox.astro";
-import SkillReel from "../components/SkillReel.astro";
+import SkillBox from "../components/skill-box.astro";
+import SkillReel from "../components/skill-reel.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <Layout title='Alex Golding'>
@@ -19,12 +20,7 @@ import SkillReel from "../components/SkillReel.astro";
     <br />
     <br />
   </div>
-  <!-- <SkillBox title='Additional Technologies'>
-    <Skill width='95%' delay='1.5s' name='BUN' icon='' />
-    <Skill width='80%' delay='2s' name='HTMX' icon='' />
-    <Skill width='90%' delay='2.5s' name='ASTRO' icon='' />
-    <Skill width='90%' delay='3s' name='WAILS' icon='' />
-  </SkillBox> -->
+  <Footer />
 </Layout>
 
 <style>
@@ -40,8 +36,8 @@ import SkillReel from "../components/SkillReel.astro";
   h2 {
     margin: 0;
     margin-left: 5px;
-    margin-top: 1rem;
-    font-size: 2rem;
+    margin-top: 0.2rem;
+    font-size: 2.15rem;
     color: hotpink;
   }
 

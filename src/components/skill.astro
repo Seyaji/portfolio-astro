@@ -1,5 +1,7 @@
 ---
-const { name, width, icon, delay } = Astro.props;
+const { name, level, icon, delay, description } = Astro.props;
+
+const width = `${level}%`;
 
 const animations = ["fill", "fill-early-acceleration", "fill-late-acceleration", "fill-ease-in-out"];
 const animation = animations[delay];
@@ -15,8 +17,9 @@ const animation = animations[delay];
       <div class='skill-fill'></div>
       <div class='text-box'>
         <p>
-          This is some content that will be updated at some point soon in the future. But for now here is just thje
-          place holder.
+          {description}
+          This is some content that will be updated at some point soon in the future. But for now here is just thje place
+          holder.
         </p>
       </div>
     </div>
@@ -32,14 +35,17 @@ const animation = animations[delay];
     overflow: hidden;
   }
 
-  .skill:hover {
-    max-height: 200px;
+  .skill:hover,
+  .skill:active,
+  .skill:focus {
+    max-height: fit-content;
   }
 
   .text-box {
     margin: 1rem;
     margin-left: 4rem;
     font-family: "Roboto", sans-serif;
+    height: fit-content;
     color: burlywood;
   }
 
@@ -70,10 +76,7 @@ const animation = animations[delay];
     background-color: black;
     overflow: hidden;
     color: lightgrey;
-  }
-
-  .skill-box {
-    height: auto;
+    border-bottom-right-radius: 15px;
   }
 
   .skill-box:hover {
