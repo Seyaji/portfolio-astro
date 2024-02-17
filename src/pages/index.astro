@@ -2,21 +2,19 @@
 import Layout from "../layouts/layout.astro";
 import Skill from "../components/skill.astro";
 import SkillBox from "../components/skill-box.astro";
-import SkillReel from "../components/skill-reel.astro";
+import Skills from "../components/skills.jsx";
 import Footer from "../components/footer.astro";
+import TitleCard from "../components/title-card.astro";
+import "../components/skills.module.css";
 ---
 
 <Layout title='Alex Golding'>
-  <div class='title-card'>
-    <h1>ALEX</h1>
-    <h1>GOLDING</h1>
-    <h2>SOFTWARE DEVELOPER</h2>
-  </div>
+  <TitleCard primary={true} />
   <br />
   <br />
   <br />
   <div class='content'>
-    <SkillReel />
+    <Skills client:load />
     <br />
     <br />
   </div>

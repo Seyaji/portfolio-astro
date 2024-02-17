@@ -1,0 +1,88 @@
+---
+const { primary } = Astro.props;
+const classes = [
+  "title-card",
+  { primary: primary },
+  { secondary: primary },
+  { "primary-alt": !primary },
+  { "secondary-alt": !primary },
+  { fixed: !primary },
+];
+---
+
+<div id={primary ? "primary-title-card" : "alternate-title-card"} class:list={classes}>
+  <h1>ALEX</h1>
+  <h1>GOLDING</h1>
+  <h2>SOFTWARE DEVELOPER</h2>
+</div>
+<style>
+  .title-card {
+    flex-direction: column;
+    max-width: 82vw;
+    padding: 0.2rem;
+    padding-top: 0rem;
+    align-items: left;
+    z-index: 100;
+  }
+  .title-card h1 {
+    margin: 0;
+    margin-top: -1rem;
+    margin-bottom: -3rem;
+    padding: 0;
+    font-size: 6rem;
+  }
+
+  .title-card h2 {
+    margin: 0;
+    margin-left: 5px;
+    margin-top: 0.2rem;
+    font-size: 2.15rem;
+  }
+
+  .fixed {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .primary-alt {
+    display: none;
+  }
+
+  .reveal {
+    display: flex;
+    z-index: 100;
+    animation: reveal 1s forwards;
+  }
+
+  @keyframes reveal {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    99% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  .primary {
+    display: flex;
+  }
+
+  .primary h1 {
+    color: goldenrod;
+  }
+
+  .secondary h2 {
+    color: hotpink;
+  }
+
+  .primary-alt h1 {
+    color: black;
+  }
+
+  .secondary-alt h2 {
+    color: firebrick;
+  }
+</style>
