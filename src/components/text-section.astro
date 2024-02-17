@@ -1,0 +1,70 @@
+---
+const { title } = Astro.props;
+---
+
+<div class='box-display'>
+  <div class='header'>
+    <h1 class='filter-animation'>{title}</h1>
+  </div>
+  <div class='text-box'>
+    <slot />
+  </div>
+</div>
+<style>
+  .box-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #272b3586;
+    height: fit-content;
+    border: 2px solid slateblue;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8rem;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+    color: darkorange;
+  }
+  .text-box h3 {
+    margin: 0;
+    padding: 0;
+  }
+  .text-box {
+    padding: 10px;
+    font-family: "roboto", sans-serif;
+    font-size: 0.8rem;
+    width: 90%;
+    min-height: 200px;
+    color: peru;
+    border-top: 5px solid darkorange;
+    border-bottom: 5px solid darkorange;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: black;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
+  .filter-animation {
+    animation: filter-animation 15s infinite;
+  }
+  .align-center {
+    text-align: center;
+  }
+  @keyframes filter-animation {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+</style>

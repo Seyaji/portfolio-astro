@@ -1,5 +1,7 @@
 ---
 import Menu from "../components/menu.astro";
+import Footer from "../components/footer.astro";
+import TitleCard from "../components/title-card.astro";
 interface Props {
   title: string;
 }
@@ -19,9 +21,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <TitleCard primary={true} />
     <div class='bkg-img'></div>
     <Menu />
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -59,6 +63,25 @@ const { title } = Astro.props;
 
   body {
     /* margin: 0; */
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(var(--accent-dark), 0.5); /* Track color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--accent)); /* Thumb color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--accent-light)); /* Thumb color when hovered */
   }
 
   .bkg-img {

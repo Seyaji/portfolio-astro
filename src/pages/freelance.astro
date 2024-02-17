@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/layout.astro";
+import TextSection from "../components/text-section.astro";
+---
+
+<Layout title='Freelance Services'>
+  <TextSection title='Freelance Services'>
+    <p>I offer a number of freelance services. Here are a few listed.</p>
+    <p>Please contact me with any questions.</p>
+    <br />
+    <h3 class:list={["filter-animation", "align-center"]}>---------------------------</h3>
+    <br />
+    <h3 class='filter-animation'>~> Web Design</h3>
+    <p>
+      I can build beautiful responsive websites using up-to-date technologies and methods that will stand the test of
+      time. I can also help with website re-designs, website transfers, improvements and other web-consultations. If you
+      have a website that needs to be built or updated, I can help.
+    </p>
+    <br />
+    <h3 class='filter-animation'>~> App Design</h3>
+    <p>
+      I can design and build mobile applications for both iOS and Android. I can also help with app re-designs, app
+      transfers, improvements and other app-consultations. If you have an app that needs to be built or updated, I can
+      help.
+    </p>
+    <br />
+    <h3 class='filter-animation'>~> Logo Design</h3>
+    <p>
+      I can create a unique and professional logo for your business or personal brand. I can also help with branding and
+      other graphic design needs.
+    </p>
+    <br />
+    <h3 class='filter-animation'>~> Other Software Services</h3>
+    <p>
+      I can help with a variety of other services like vps management and setup, other server management, database
+      creation, email hosting and more.
+    </p>
+  </TextSection>
+</Layout>
+<style>
+  .text-box {
+    padding: 10px;
+    font-family: "roboto", sans-serif;
+    font-size: 0.8rem;
+    width: 90%;
+    min-height: 200px;
+    color: peru;
+    border-top: 5px solid darkorange;
+    border-bottom: 5px solid darkorange;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: black;
+    margin: auto;
+    margin-bottom: 1.5rem;
+  }
+  .filter-animation {
+    animation: filter-animation 15s infinite;
+  }
+  .align-center {
+    text-align: center;
+  }
+  @keyframes filter-animation {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+</style>
