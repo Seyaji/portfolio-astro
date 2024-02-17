@@ -36,9 +36,10 @@ const classes = [
     margin: 0;
     margin-left: 3px;
     margin-top: 0.2rem;
-    font-size: 2.1rem;
+    font-size: 2rem;
     text-wrap: nowrap;
-    overflow: hidden;
+    --webkit-text-overflow: clip;
+    text-overflow: clip;
   }
 
   .fixed {
