@@ -5,9 +5,12 @@ import TextSection from "../components/text-section.astro";
 
 <Layout title='Freelance Services'>
   <TextSection title='Freelance Services'>
-    <p>I offer a number of freelance services. Here are a few listed.</p>
-    <p>Please contact me with any questions.</p>
-    <br />
+    <h3 class:list={["filter-animation", "align-center"]}>&lt~&gt</h3>
+    <div class='align-center'>
+      <p>I offer a number of freelance services. Here are a few listed.</p>
+      <p>Please contact me with any questions.</p>
+      <p class='rotate-text'>:)</p>
+    </div>
     <h3 class:list={["filter-animation", "align-center"]}>---------------------------</h3>
     <br />
     <h3 class='filter-animation'>~> Web Design</h3>
@@ -35,6 +38,9 @@ import TextSection from "../components/text-section.astro";
       I can help with a variety of other services like vps management and setup, other server management, database
       creation, email hosting and more.
     </p>
+    <br />
+    <h3 class:list={["filter-animation", "align-center"]}>---------------------------</h3>
+    <h3 class:list={["filter-animation", "align-center"]}>&lt~&gt</h3>
   </TextSection>
 </Layout>
 <style>
@@ -55,6 +61,19 @@ import TextSection from "../components/text-section.astro";
   }
   .filter-animation {
     animation: filter-animation 15s infinite;
+  }
+
+  .rotate-text {
+    animation: rotate 5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   .align-center {
     text-align: center;
