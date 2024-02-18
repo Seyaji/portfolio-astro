@@ -43,12 +43,11 @@ import MenuItem from "./menu-item.astro";
   .menu {
     position: fixed;
     top: 0;
-    left: 101vw;
+    left: 103vw;
     padding-top: 8px;
     padding-left: 8px;
     width: 100vw;
     height: 100vh;
-    /* background-color: rgba(0, 0, 0, 0.5); */
     background-color: goldenrod;
     z-index: 100;
   }
@@ -105,9 +104,15 @@ import MenuItem from "./menu-item.astro";
     z-index: 200;
   }
 
+  @media (max-width: 568px) {
+    .menu {
+      width: 101vw;
+    }
+  }
+
   @keyframes revealMenu {
     0% {
-      transform: translateX(100vw);
+      transform: translateX(101vw);
     }
     100% {
       transform: translateX(0vw);
