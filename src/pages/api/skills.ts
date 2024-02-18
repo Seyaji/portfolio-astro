@@ -56,7 +56,7 @@ export const skills = [
           "I have been using HTMX for a few months now and I love it. I really like the way it allows me to build dynamic web applications without having to write a lot of JavaScript. I have been using it with Go and Templ. I'm actually thinking about rewriting this site with HTMX and go as a side by side comparison. ",
       },
       {
-        name: "Linuxn - Debian",
+        name: "Linux - Debian",
         level: 80,
         animation: 2,
         description:
