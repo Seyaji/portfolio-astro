@@ -60,7 +60,7 @@ export const skills = [
         level: 80,
         animation: 2,
         description:
-          "Linux is great. All power to the open source! I run a few VPS's with Debian that I use for my personal projects. I have good working ability and confidence running it through the command line. Hopefully onday soon I'll make a full switch to Linux from MacOS (or at least get a dedicated physical machine).",
+          "Linux is great. All power to the open source! I run a few VPS's with Debian that I use for my personal projects. I have good working ability and confidence running it through the command line. Hopefully one day soon I'll make a full switch to Linux from MacOS (or at least get a dedicated physical machine).",
       },
       {
         name: "Astro",
