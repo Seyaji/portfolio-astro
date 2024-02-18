@@ -95,7 +95,7 @@ export const skills = [
         name: "Cyber Security",
         level: 40,
         description:
-          "This has recently become a big interest of mine. I have been doing some small courses and learning materials on the side on and off. Its something I intent to build my skills up in over time.",
+          "This has recently become a big interest of mine. I have been doing some small courses and learning materials on the side on and off. Its something I intend to build my skills up in over time.",
       },
       {
         name: "C",
