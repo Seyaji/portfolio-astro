@@ -28,6 +28,7 @@
   box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.432);
   transition: all 0.3s ease-in-out;
 }
+
 .skillBox {
   width: 90%;
   max-width: 800px;
@@ -59,6 +60,9 @@
 .skillDescription {
   margin-left: 2rem;
   margin-right: 1rem;
+}
+
+.skillDescription p {
   color: white;
   font-family: "Roboto", sans-serif;
 }
@@ -73,9 +77,11 @@
 }
 
 .skill:hover,
+.skill:target,
 .skill:active,
 .skill:focus {
   max-height: fit-content;
+  cursor: pointer;
 }
 
 /* Skill Header */
@@ -142,7 +148,7 @@ p {
 /* Next and Previous Buttons */
 .nextPrevious {
   margin-top: 7rem;
-  width: 40px;
+  max-width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -158,23 +164,27 @@ p {
 
 .forwardAngle {
   transform: rotate(90deg);
+  margin-left: 1rem;
 }
 
 .backwardAngle {
   transform: rotate(-90deg);
+  margin-right: 1rem;
 }
 
 /* SVG inside Next and Previous Buttons */
 .nextPrevious svg {
+  position: absolute;
   height: 30px;
   width: 30px;
   animation: attention 1s infinite alternate;
   transition: all 0.3s ease-in-out;
+  transform-origin: center;
 }
 
 .nextPrevious svg:hover {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   fill: orange;
   cursor: pointer;
 }
