@@ -1,7 +1,30 @@
 ---
 import Layout from "../layouts/layout.astro";
+import TextSection from "../components/text-section.astro";
 ---
 
 <Layout title='Contact me'>
-  <h1>CONTACT</h1>
+  <TextSection>
+    <h1>Contact</h1>
+    <p>
+      If you want to get in touch, you can find me on LinkedIn or GitHub.
+      <p>
+        LinkedIn: <a href='https://www.linkedin.com/in/alex-golding/' target='_blank' rel='noopener noreferrer'
+          >linkedin.com/in/alex-golding/</a>
+      </p>
+      <p>
+        GitHub: &nbsp;&nbsp;<a href='https://github.com/Seyaji' target='_blank' rel='noopener noreferrer'
+          >github.com/Seyaji</a>
+      </p>
+    </p>
+  </TextSection>
 </Layout>
+<style>
+  a {
+    text-decoration: underline;
+    color: white;
+  }
+  a:visited {
+    color: goldenrod;
+  }
+</style>
