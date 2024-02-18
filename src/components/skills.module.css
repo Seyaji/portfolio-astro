@@ -56,6 +56,14 @@
   text-align: center;
 }
 
+@media (max-width: 285px) {
+  .skillTitle {
+    top: -35px;
+    left: 10px;
+    font-size: 1.5rem;
+  }
+}
+
 /* Skill Description */
 .skillDescription {
   margin-left: 2rem;
