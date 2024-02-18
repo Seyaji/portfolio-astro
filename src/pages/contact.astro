@@ -4,22 +4,30 @@ import TextSection from "../components/text-section.astro";
 ---
 
 <Layout title='Contact me'>
-  <TextSection>
-    <h1>Contact</h1>
+  <TextSection title='CONTACT'>
+    <h3 class:list={["filter-animation", "align-center"]}>&lt~&gt</h3>
+    <br />
     <p>
       If you want to get in touch, you can find me on LinkedIn or GitHub.
       <p>
         LinkedIn: <a href='https://www.linkedin.com/in/alex-golding/' target='_blank' rel='noopener noreferrer'
-          >linkedin.com/in/alex-golding/</a>
+          >linkedin.com/in/alex-golding/</a
+        >
       </p>
       <p>
         GitHub: &nbsp;&nbsp;<a href='https://github.com/Seyaji' target='_blank' rel='noopener noreferrer'
-          >github.com/Seyaji</a>
+          >github.com/Seyaji</a
+        >
       </p>
+      <br />
+      <h3 class:list={["filter-animation", "align-center"]}>&lt~&gt</h3>
     </p>
   </TextSection>
 </Layout>
 <style>
+  .align-center {
+    text-align: center;
+  }
   a {
     text-decoration: underline;
     color: white;
