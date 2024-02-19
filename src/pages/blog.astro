@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/layout.astro";
-import TextSection from "../components/text-section.astro";
+import BlogPost from "../layouts/blog-post.astro";
+import BlogLayout from "../layouts/blog.astro";
 ---
 
-<Layout title='BLOG'>
-  <TextSection title='blog.. 👀'>
-    <p>Coming soon.....</p>
-  </TextSection>
-</Layout>
+<BlogLayout title='BLOG'>
+  <BlogPost title='Hello World' date='2021-05-01'>
+    <p>My first blog post</p>
+  </BlogPost>
+</BlogLayout>

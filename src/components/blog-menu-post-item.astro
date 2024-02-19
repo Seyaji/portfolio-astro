@@ -1,0 +1,53 @@
+---
+const { title, pubDate } = Astro.props;
+const date = new Date(pubDate).toLocaleDateString();
+---
+
+<div class='blog-post-item'>
+  <p class='post-name'>{title}</p>
+  <p class='post-date'>{date}</p>
+</div>
+<style>
+  .blog-post-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+    margin: 0rem;
+    padding: 0rem;
+    width: 100%;
+
+    align-self: normal;
+    /* margin-top: 0rem; */
+    margin-left: 0.5rem;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    font-family: "roboto", sans-serif;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .blog-post-item:hover {
+    color: coral;
+  }
+
+  .post-name {
+    width: 55vw;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: inherit;
+  }
+
+  .post-date {
+    width: 80px;
+    margin-right: 0.5rem;
+    text-align: left;
+    color: inherit;
+  }
+</style>

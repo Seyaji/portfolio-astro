@@ -10,7 +10,7 @@ export const skills = [
         level: 95,
         animation: 1,
         description:
-          "I possess strong proficiency in TypeScript, having used it nearly as long as JavaScript. My recent professional engagements involve React, Node.js, and Canvas, where I have confidently developed APIs and front-end applications.",
+          "I possess strong proficiency in TypeScript, having used it nearly as long as JavaScript. My recent professional experience has been with React and Node.js, where I have confidently developed APIs and front-end applications.",
       },
       {
         name: "React / Next.js",
@@ -24,7 +24,7 @@ export const skills = [
         level: 90,
         animation: 3,
         description:
-          "My projects often start with Node.js (or Bun.sh for TypeScript integration). I have extensive professional experience with Node.js, having developed numerous APIs and services. I am confident in my Node.js capabilities, which is essential for projects ranging from small to large scale.",
+          "My projects often start with Node.js (or Bun.sh for plug and play TypeScript integration). I have extensive professional experience with Node.js, having developed numerous APIs and services. I am confident in my Node.js capabilities, which is essential for projects ranging from small to large scale.",
       },
     ],
   },

@@ -27,15 +27,17 @@ import MenuItem from "./menu-item.astro";
     const menu = document.querySelector(".menu");
     const closeMenu = document.getElementById("close-menu");
     const card = document.getElementById("alternate-title-card");
+
     menuButton?.addEventListener("click", () => {
-      console.log("menu");
       menu?.classList.add("reveal-menu");
       card?.classList.add("reveal");
+      menuButton?.classList.add("display-none");
     });
+
     closeMenu?.addEventListener("click", () => {
-      console.log("close");
       menu?.classList.remove("reveal-menu");
       card?.classList.remove("reveal");
+      menuButton?.classList.remove("display-none");
     });
   });
 </script>
@@ -48,8 +50,8 @@ import MenuItem from "./menu-item.astro";
     padding-left: 8px;
     width: 100vw;
     height: 100vh;
-    background-color: goldenrod;
-    z-index: 100;
+    background-color: ghostwhite;
+    z-index: 110;
   }
 
   .menu-items {
@@ -57,11 +59,11 @@ import MenuItem from "./menu-item.astro";
     margin-top: 14rem;
     margin-left: -0.5rem;
     width: 100%;
-    background-color: goldenrod;
     flex-direction: column;
     align-items: center;
     height: 100%;
   }
+
   .menu-button {
     position: fixed;
     top: 2px;
@@ -71,6 +73,10 @@ import MenuItem from "./menu-item.astro";
     margin: 0.5rem;
     cursor: pointer;
     animation: bar-width 10s linear;
+  }
+
+  .display-none {
+    display: none;
   }
 
   .reveal-menu {
@@ -85,6 +91,7 @@ import MenuItem from "./menu-item.astro";
     background-color: darkorange;
     animation: bar-width 6s infinite linear 3s;
   }
+
   .menu-button:hover {
     width: 70px;
   }
@@ -102,6 +109,10 @@ import MenuItem from "./menu-item.astro";
     justify-content: flex-end;
     cursor: pointer;
     z-index: 200;
+  }
+
+  .close-menu:hover {
+    color: firebrick;
   }
 
   @media (max-width: 568px) {

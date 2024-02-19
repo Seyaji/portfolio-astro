@@ -1,0 +1,217 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+console.log(allPosts);
+import BlogMenuPostItem from "../components/blog-menu-post-item.astro";
+---
+
+<div class='open-blog'>
+  <div class='blog-button'>
+    <div class='glass'></div>
+    <div class='handle'></div>
+  </div>
+</div>
+<div class='blog-menu'>
+  <div class='close-blog'>
+    <h1>X</h1>
+  </div>
+  <div class='title-blog'>
+    <h1>BLOG</h1>
+  </div>
+  <ul>
+    <li tabindex='0'>Coding</li>
+    <li tabindex='0'>Tech</li>
+    <li tabindex='0'>Life</li>
+    <li tabindex='0'>Music</li>
+    <li tabindex='0'>Travel</li>
+    <li tabindex='0'>Work</li>
+  </ul>
+  <div class='tv-box'>
+    {
+      allPosts.map((post) => {
+        console.log(post.frontmatter);
+        return <BlogMenuPostItem title={post?.frontmatter.title} pubDate={post.frontmatter.pubDate} />;
+      })
+    }
+  </div>
+  <div class='posts-list-ext'>
+    {
+      allPosts.map((post) => {
+        console.log(post.frontmatter);
+        return <BlogMenuPostItem title={post?.frontmatter.title} pubDate={post.frontmatter.pubDate} />;
+      })
+    }
+  </div>
+</div>
+<script>
+  const openBlog = document.querySelector(".open-blog");
+  const blogMenu = document.querySelector(".blog-menu");
+  const closeBlog = document.querySelector(".close-blog");
+
+  if (openBlog && closeBlog && blogMenu) {
+    openBlog.addEventListener("click", () => {
+      // @ts-ignore
+      blogMenu.style.left = "0";
+    });
+
+    closeBlog.addEventListener("click", () => {
+      // @ts-ignore
+      blogMenu.style.left = "-650px";
+    });
+  }
+</script>
+<style>
+  .open-blog {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    left: -60px;
+    cursor: pointer;
+    z-index: 100;
+    background-color: slateblue;
+    border: 6px solid coral;
+    transform: rotate(45deg);
+    border-radius: 25px;
+    width: 80px;
+    height: 80px;
+    animation: bump-attention 1s infinite;
+  }
+
+  .glass {
+    position: absolute;
+    left: 50px;
+    top: 7px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 6px solid white;
+    z-index: 100;
+  }
+
+  .handle {
+    position: absolute;
+    left: 18px;
+    top: 28px;
+    height: 20px;
+    width: 40px;
+    border-right: 6px solid white;
+    z-index: 100;
+  }
+
+  .open-blog:hover {
+    left: -50px;
+    transition: all 0.1s;
+  }
+
+  .blog-button {
+    width: 50px;
+    height: 5px;
+  }
+
+  .close-blog {
+    display: flex;
+    position: absolute;
+    justify-content: flex-end;
+    width: 88%;
+    cursor: pointer;
+    margin-top: 0rem;
+  }
+
+  .title-blog {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0rem;
+  }
+
+  .close-blog h1:hover {
+    color: white;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .tv-box {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 200px;
+    margin: 1rem;
+    border: 5px solid white;
+  }
+
+  .blog-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border-top: 12px solid coral;
+    border-bottom: 12px solid coral;
+    align-items: center;
+    top: 0;
+    left: -600rem;
+    margin-left: -10px;
+    max-width: 600px;
+    height: 94vh;
+    margin-bottom: auto;
+    background-color: rgba(105, 90, 205, 1);
+    padding: 10px;
+    text-align: center;
+    z-index: 100;
+    transition: all 0.3s;
+  }
+
+  .posts-list-ext {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 90%;
+    height: 200px;
+    margin: 1rem;
+  }
+
+  h1 {
+    text-align: left;
+    font-size: 4rem;
+    margin-left: 1rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+    color: coral;
+  }
+
+  p {
+    font-family: "roboto", sans-serif;
+    text-decoration: none;
+    margin-right: 3rem;
+    margin: 0rem;
+    color: white;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 400px;
+  }
+
+  li {
+    font-family: "roboto", sans-serif;
+    text-decoration: none;
+    margin-right: 3rem;
+    color: white;
+    width: 55px;
+    list-style-type: square;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: coral;
+    scale: 1.1;
+  }
+
+  li:focus,
+  li:target,
+  li:active {
+    color: hotpink;
+    scale: 1.1;
+  }
+</style>

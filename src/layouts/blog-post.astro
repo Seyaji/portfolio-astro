@@ -1,0 +1,121 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const { frontmatter } = allPosts[0];
+---
+
+<div class='blog-post' '>
+  <div class='blog-post-header'>
+    <div class:list={["blog-post-title", "align-right"]}>
+      <h1>{new Date(frontmatter.pubDate).toLocaleDateString()}</h1>
+    </div>
+    <!-- <div class:list={["blog-post-title", "align-right"]}></div> -->
+  </div>
+  <div class='blog-post-content'>
+    <div class='post-display'>
+      <h1 class='post-title-text'>This blog is currently under construction... :)</h1>
+      <div class='header-bar'></div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+  .align-right {
+    align-self: flex-end;
+  }
+  .header-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 10px;
+    width: 90%;
+    background-color: slateblue;
+  }
+  .blog-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .blog-post-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 800px;
+    width: 85%;
+  }
+  .blog-post-title {
+    flex-wrap: nowrap;
+    width: auto;
+    text-align: center;
+    background-color: #272b3586;
+    border: 2px solid slateblue;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius: 8px;
+    margin-bottom: 0.3rem;
+  }
+
+  .post-title-text {
+    text-overflow: ellipsis;
+  }
+  .blog-post-title h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .blog-post-content {
+    width: 85%;
+    max-width: 800px;
+    flex-direction: column;
+    border: 2px solid slateblue;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius: 15px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    /* box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.232); */
+    background-color: #272b3586;
+  }
+
+  .blog-post-content h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-post-content p {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-display {
+    width: 100%;
+    max-width: 80vw;
+  }
+
+  h1 {
+    color: goldenrod;
+  }
+
+  p {
+    color: white;
+    font-size: 0.8rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: "roboto", sans-serif;
+  }
+</style>
