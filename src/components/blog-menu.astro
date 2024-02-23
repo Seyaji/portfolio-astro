@@ -1,7 +1,5 @@
 ---
-const allPosts = await Astro.glob("../pages/posts/*.md");
-console.log(allPosts);
-import BlogMenuPostItem from "../components/blog-menu-post-item.astro";
+
 ---
 
 <div class='open-blog'>
@@ -18,29 +16,27 @@ import BlogMenuPostItem from "../components/blog-menu-post-item.astro";
     <h1>BLOG</h1>
   </div>
   <ul>
-    <li tabindex='0'>Coding</li>
-    <li tabindex='0'>Tech</li>
-    <li tabindex='0'>Life</li>
-    <li tabindex='0'>Music</li>
-    <li tabindex='0'>Travel</li>
-    <li tabindex='0'>Work</li>
+    <div hx-get='/blog/preview?topic=coding' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=coding' hx-target='#post-list-ext' hx-trigger='click'>Coding</li>
+    </div>
+    <div hx-get='/blog/preview?topic=tech' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=tech' hx-target='#post-list-ext' hx-trigger='click'>Tech</li>
+    </div>
+    <div hx-get='/blog/preview?topic=life' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=life' hx-target='#post-list-ext' hx-trigger='click'>Life</li>
+    </div>
+    <div hx-get='/blog/preview?topic=music' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=music' hx-target='#post-list-ext' hx-trigger='click'>Music</li>
+    </div>
+    <div hx-get='/blog/preview?topic=travel' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=travel' hx-target='#post-list-ext' hx-trigger='click'>Travel</li>
+    </div>
+    <div hx-get='/blog/preview?topic=work' hx-trigger='mouseenter' hx-target='#tv-box'>
+      <li tabindex='0' hx-get='/blog/content?topic=work' hx-target='#post-list-ext' hx-trigger='click'>Work</li>
+    </div>
   </ul>
-  <div class='tv-box'>
-    {
-      allPosts.map((post) => {
-        console.log(post.frontmatter);
-        return <BlogMenuPostItem title={post?.frontmatter.title} pubDate={post.frontmatter.pubDate} />;
-      })
-    }
-  </div>
-  <div class='posts-list-ext'>
-    {
-      allPosts.map((post) => {
-        console.log(post.frontmatter);
-        return <BlogMenuPostItem title={post?.frontmatter.title} pubDate={post.frontmatter.pubDate} />;
-      })
-    }
-  </div>
+  <div id='tv-box' class='tv-box'></div>
+  <div id='post-list-ext' class='posts-list-ext'></div>
 </div>
 <script>
   const openBlog = document.querySelector(".open-blog");
@@ -133,9 +129,11 @@ import BlogMenuPostItem from "../components/blog-menu-post-item.astro";
     display: flex;
     flex-direction: column;
     width: 85%;
+    max-width: 383px;
     height: 200px;
     margin: 1rem;
     border: 5px solid white;
+    overflow-y: scroll;
   }
 
   .blog-menu {
@@ -162,8 +160,9 @@ import BlogMenuPostItem from "../components/blog-menu-post-item.astro";
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 90%;
+    width: 87%;
     height: 200px;
+    max-width: 383px;
     margin: 1rem;
   }
 

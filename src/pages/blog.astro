@@ -1,10 +1,20 @@
 ---
-import BlogPost from "../layouts/blog-post.astro";
 import BlogLayout from "../layouts/blog.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
+
+const posts = blogPosts.map((post) => {
+  return {
+    params: { slug: post.slug },
+    props: { post },
+  };
+});
+
+const { props } = posts[0];
+const { Content } = await props.post.render();
 ---
 
 <BlogLayout title='BLOG'>
-  <BlogPost title='Hello World' date='2021-05-01'>
-    <p>My first blog post</p>
-  </BlogPost>
+  <Content />
 </BlogLayout>

@@ -1,33 +1,40 @@
 ---
-const allPosts = await Astro.glob("../pages/posts/*.md");
-const { frontmatter } = allPosts[0];
+const { frontmatter } = Astro.props;
 ---
 
 <div class='blog-post' '>
   <div class='blog-post-header'>
-    <div class:list={["blog-post-title", "align-right"]}>
+    <div class:list={["blog-post-title"]}>
       <h1>{new Date(frontmatter.pubDate).toLocaleDateString()}</h1>
     </div>
-    <!-- <div class:list={["blog-post-title", "align-right"]}></div> -->
   </div>
   <div class='blog-post-content'>
     <div class='post-display'>
-      <h1 class='post-title-text'>This blog is currently under construction... :)</h1>
+      <h1 class='post-title-text'>{frontmatter.title}</h1>
       <div class='header-bar'></div>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
+      <slot />
     </div>
   </div>
+  <div class='blog-post-header'>
+    {
+      frontmatter?.tags?.map((tag: string) => {
+        console.log(tag);
+        return (
+          <div class:list={["blog-post-title", "align-left"]}>
+            <h1>{tag.toUpperCase()}</h1>
+          </div>
+        );
+      })
+    }
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
 </div>
 <style>
-  .align-right {
-    align-self: flex-end;
-  }
   .header-bar {
     display: flex;
     flex-direction: row;
@@ -47,22 +54,23 @@ const { frontmatter } = allPosts[0];
   }
   .blog-post-header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    justify-content: flex-start;
     max-width: 800px;
     width: 85%;
   }
   .blog-post-title {
-    flex-wrap: nowrap;
-    width: auto;
+    width: fit-content;
     text-align: center;
     background-color: #272b3586;
     border: 2px solid slateblue;
     border-right: 0px;
     border-bottom: 0px;
     border-radius: 8px;
-    margin-bottom: 0.3rem;
+    margin-bottom: 8px;
+    margin-right: 8px;
   }
 
   .post-title-text {
@@ -84,6 +92,7 @@ const { frontmatter } = allPosts[0];
     border-radius: 15px;
     padding-top: 1rem;
     padding-bottom: 2rem;
+    margin-top: 0;
     /* box-shadow: 0 0 12px 8px rgba(255, 127, 80, 0.232); */
     background-color: #272b3586;
   }
@@ -99,6 +108,7 @@ const { frontmatter } = allPosts[0];
     margin-top: 1rem;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    color: white;
   }
 
   .post-display {
@@ -107,7 +117,7 @@ const { frontmatter } = allPosts[0];
   }
 
   h1 {
-    color: goldenrod;
+    color: powderblue;
   }
 
   p {
