@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { skills } from '../pages/api/skills';
 import Styles from "./skills.module.css";
 
