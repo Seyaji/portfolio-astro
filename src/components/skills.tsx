@@ -13,9 +13,9 @@ function Next({ next, onClick }: { next: boolean, onClick: () => void }) {
   )
 }
 
-function Skill({ icon, name, description, animation, level, tabIndex }: { icon: string, name: string, description: string, level: number, animation: string, tabIndex: number }) {
+function Skill({ icon, name, description, animation, level, tabIndex }: { icon: string, name: string, description: string, level: number, animation: string }) {
   return (
-    <div className={Styles.skill} tabIndex={tabIndex}>
+    <div className={Styles.skill} tabIndex={0}>
       <div className={Styles.skillHeader}>
         <div className={Styles.skillIcon}>{icon}</div>
         <div className={Styles.skillName}>{name}</div>
@@ -44,7 +44,7 @@ function SkillCard({ id, title, description, skills, fade }: { id: string, title
       <div className={Styles.skillDescription}>
         <p>{description}</p>
       </div>
-      {(skills ?? []).map((skill, index) => <Skill key={index} tabIndex={index} {...skill} animation={selector(index)} />)}
+      {(skills ?? []).map((skill, index) => <Skill key={index} {...skill} animation={selector(index)} />)}
       <slot />
     </div>
   )
