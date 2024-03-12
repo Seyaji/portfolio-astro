@@ -13,7 +13,7 @@ function Next({ next, onClick }: { next: boolean, onClick: () => void }) {
   )
 }
 
-function Skill({ icon, name, description, animation, level, tabIndex }: { icon: string, name: string, description: string, level: number, animation: string }) {
+function Skill({ icon, name, description, animation, level }: { icon: string, name: string, description: string, level: number, animation: string }) {
   return (
     <div className={Styles.skill} tabIndex={0}>
       <div className={Styles.skillHeader}>
